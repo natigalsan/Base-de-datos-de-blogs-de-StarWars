@@ -25,15 +25,13 @@ class Personajes(Base):
     id = Column(Integer, primary_key=True)
     name_pj = Column(String(250))
     hair_color = Column(String(250))
-    height = Column(String(250), nullable=False)
+    height = Column(String(250))
 
     user_id = Column(Integer, ForeignKey('user.id'))
 
     rel_user = relationship(User)
 
-    def to_dict(self):
-        return {}
-
+   
 
 class Fav_Pj (Base):
     __tablename__ = 'fav_Pj'
